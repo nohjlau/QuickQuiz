@@ -50,6 +50,7 @@ h3 {
     align-items: center;        /* center vertically */
     max-width: 80rem;
     margin: 0 auto;             /* center content as screen gets bigger, but maintain full width and height if smaller*/
+    padding: 2rem;
 }
 
 .container > * {                /* any child of container will have these properties */
