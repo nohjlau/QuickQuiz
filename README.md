@@ -3,7 +3,7 @@ This was created using a tutorial by James Q Quick using HTML, CSS, and Javascri
 Creation Steps
 1. Created the CSS style using flexbox.
 2. Added styles for buttons. 
-3. Create the game interface
-4. Create the game logic
-5. Add feedback for correct and incorrect answers
-6. Create a HUD displaying score and questions.
+3. Create the game interface & Create the game logic
+4. Add feedback for correct and incorrect answers
+5. Create a HUD displaying score and questions.
+6. Replaced question counter w/ progress bar.
