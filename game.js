@@ -27,7 +27,6 @@ fetch("https://opentdb.com/api.php?amount=10&type=multiple").then(res => {
     });
     return formattedQuestion;
   })
-  //questions = loadedQuestions;
   startGame();
 }).catch( err=> {
   console.error(err);
@@ -43,6 +42,8 @@ fetch("https://opentdb.com/api.php?amount=10&type=multiple").then(res => {
       availableQuestions = [...questions];
       console.log(availableQuestions);
       getNewQuestion();
+      game.classList.remove("hidden");
+      loader.classList.add("hidden");
   };
 
   getNewQuestion = () => {
