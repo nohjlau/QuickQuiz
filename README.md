@@ -3,8 +3,5 @@ This was created using a tutorial by James Q Quick using HTML, CSS, and Javascri
 
 # Next Steps - Beyond the Tutorial
 ### TODO:
-* Modify scoring criteria based on difficulty of question (Easy: 7, Medium: 10, Hard: 13);
-* Display
-* Show the correct answer
-
-### COMPLETED:
+* Display Highscores on homepage.
+* Show the correct answer.

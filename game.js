@@ -8,7 +8,7 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
-
+let questionDifficulty = "";
 let questions = [];
 
 fetch("https://opentdb.com/api.php?amount=10&type=multiple").then(res => {
@@ -16,8 +16,8 @@ fetch("https://opentdb.com/api.php?amount=10&type=multiple").then(res => {
 }).then( loadedQuestions => {
   console.log(loadedQuestions.results);
   questions = loadedQuestions.results.map( loadedQuestion => {
-    const formattedQuestion = { question: loadedQuestion.question };
-
+    const formattedQuestion = { question: loadedQuestion.question, difficulty: loadedQuestion.difficulty };
+    questionDifficulty = loadedQuestion.difficulty;
     const answerChoices = [... loadedQuestion.incorrect_answers];
     formattedQuestion.answer = Math.floor(Math.random()*3) + 1;
     answerChoices.splice(formattedQuestion.answer-1, 0, loadedQuestion.correct_answer);
@@ -34,6 +34,7 @@ fetch("https://opentdb.com/api.php?amount=10&type=multiple").then(res => {
 
   // CONSTANTS
   const CORRECT_BONUS = 10;
+  const DIFFICULTY_MODIFIER = 3;
   const MAX_QUESTIONS = 10;
 
   startGame = () => {
@@ -83,7 +84,19 @@ choices.forEach(choice => {
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
         
         if(classToApply === 'correct')
-          incrementScore(CORRECT_BONUS);
+          switch(questionDifficulty) {
+            case "easy":
+              incrementScore(CORRECT_BONUS-DIFFICULTY_MODIFIER);
+              break;
+            case "medium":
+              incrementScore(CORRECT_BONUS);
+              break;
+            case "hard":
+              incrementScore(CORRECT_BONUS+DIFFICULTY_MODIFIER);
+              break;
+            default:
+              break;
+          }
         selectedChoice.parentElement.classList.add(classToApply);
         setTimeout( () => { selectedChoice.parentElement.classList.remove(classToApply);
           getNewQuestion();}, 1000);
