@@ -1,7 +1,9 @@
 # Introduction
-This was created using a tutorial by James Q Quick using HTML, CSS, and Javascript to improve my Core Web Development skills. Javascript topics include using arrays, local storage, and APIs. CSS topics include flexbox, animation, and REM units. For more information, visit the github project [here](https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript).
+QuickQuiz is a quiz site that started out as a [tutorial](https://github.com/jamesqquick/Build-A-Quiz-App-With-HTML-CSS-and-JavaScript), but I enjoyed creating it so much that I decided to add functionality that extended beyond the scope of the original project. Some Javascript topics include using storage and interfacing with external APIs. Some CSS topics include the use of flexbox, animations, and REM units.
 
-# Next Steps - Beyond the Tutorial
+# What's next?
+
 ### TODO:
+
 * Display Highscores on homepage.
 * Show the correct answer.
